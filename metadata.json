@@ -1,0 +1,10 @@
+{
+  "name": "SimuDé Pro - Next Gen",
+  "description": "Le simulateur de dé ultime avec physique 3D, personnalisation avancée et interface futuriste.",
+  "short_name": "SimuDé Pro",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "requestFramePermissions": []
+}
