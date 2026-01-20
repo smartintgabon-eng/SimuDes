@@ -2,17 +2,24 @@
 {
   "name": "SimuDé Pro - L'expérience Ultime",
   "short_name": "SimuDé Pro",
-  "description": "Lancez vos dés avec une physique 3D avancée et une personnalisation totale.",
+  "description": "Le simulateur de dé 3D le plus avancé.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
   "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iIzBmMTcyYSIvPjxyZWN0IHg9IjgwIiB5PSI4MCIgd2lkdGg9IjM1MiIgaGVpZ2h0PSIzNTIiIHJ4PSI2MCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxNjAiIHI9IjMwIiBmaWxsPSIjMGYxNzJhIi8+PGNpcmNsZSBjeD0iMzUyIiBjeT0iMTYwIiByPSIzMCIgZmlsbD0iIzBmMTcyYSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjM1MiIgcj0iMzAiIGZpbGw9IiMwZjE3MmEiLz48Y2lyY2xlIGN4PSIzNTIiIGN5PSIzNTIiIHI9IjMwIiBmaWxsPSIjMGYxNzJhIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIzMCIgZmlsbD0iIzBmMTcyYSIvPjwvc3ZnPg==",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iIzBmMTcyYSIvPjxyZWN0IHg9IjgwIiB5PSI4MCIgd2lkdGg9IjM1MiIgaGVpZ2h0PSIzNTIiIHJ4PSI2MCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxNjAiIHI9IjMwIiBmaWxsPSIjMGYxNzJhIi8+PGNpcmNsZSBjeD0iMzUyIiBjeT0iMTYwIiByPSIzMCIgZmlsbD0iIzBmMTcyYSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjM1MiIgcj0iMzAiIGZpbGw9IiMwZjE3MmEiLz48Y2lyY2xlIGN4PSIzNTIiIGN5PSIzNTIiIHI9IjMwIiBmaWxsPSIjMGYxNzJhIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIzMCIgZmlsbD0iIzBmMTcyYSIvPjwvc3ZnPg==",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
-  ],
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#3b82f6"
+  ]
 }
