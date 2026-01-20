@@ -7,9 +7,18 @@ interface HomeProps {
   onOpenSettings: () => void;
   onOpenUpdates: () => void;
   onOpenTutorial: () => void;
+  canInstall?: boolean;
+  onInstall?: () => void;
 }
 
-const Home: React.FC<HomeProps> = ({ onNavigate, onOpenSettings, onOpenUpdates, onOpenTutorial }) => {
+const Home: React.FC<HomeProps> = ({ 
+  onNavigate, 
+  onOpenSettings, 
+  onOpenUpdates, 
+  onOpenTutorial,
+  canInstall,
+  onInstall
+}) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-950 text-white overflow-hidden relative">
       {/* Background Orbs */}
@@ -38,6 +47,16 @@ const Home: React.FC<HomeProps> = ({ onNavigate, onOpenSettings, onOpenUpdates, 
             Commencer
           </button>
           
+          {canInstall && (
+            <button 
+              onClick={onInstall}
+              className="col-span-1 md:col-span-2 py-5 px-8 bg-blue-600/20 border border-blue-500/30 rounded-3xl font-black text-blue-400 hover:bg-blue-600/30 transition-all flex items-center justify-center gap-3 animate-pulse"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Installer l'Application Pro
+            </button>
+          )}
+
           <button 
             onClick={onOpenSettings}
             className="py-5 px-8 glass rounded-3xl font-bold text-white/80 hover:text-white hover:bg-white/10 transition-all flex items-center justify-center gap-3 border border-white/5"
@@ -58,7 +77,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate, onOpenSettings, onOpenUpdates, 
             onClick={onOpenUpdates}
             className="col-span-1 md:col-span-2 py-4 text-white/40 font-bold uppercase text-xs tracking-widest hover:text-white/80 transition-all"
           >
-            Nouveautés v2.1.0 • Mise à jour
+            Nouveautés v2.3.0 • Mise à jour
           </button>
         </div>
       </div>
