@@ -7,9 +7,17 @@ interface SettingsModalProps {
   settings: AppSettings;
   onSave: (settings: AppSettings) => void;
   onClose: () => void;
+  canInstall?: boolean;
+  onInstall?: () => void;
 }
 
-const SettingsModal: React.FC<SettingsModalProps> = ({ settings, onSave, onClose }) => {
+const SettingsModal: React.FC<SettingsModalProps> = ({ 
+  settings, 
+  onSave, 
+  onClose,
+  canInstall,
+  onInstall
+}) => {
   const [localSettings, setLocalSettings] = useState<AppSettings>(settings);
   const [customHex, setCustomHex] = useState(settings.themeColor);
   const [suggestions, setSuggestions] = useState<{name: string, hex: string}[]>([]);
@@ -59,7 +67,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ settings, onSave, onClose
                         : 'bg-white/5 text-white/60 hover:bg-white/10 border border-white/5'
                     }`}
                   >
-                    {type === DieType.D6 ? 'Standard (1-6)' : `D${type}`}
+                    {type === DieType.D6 ? 'Standard' : `D${type}`}
                   </button>
                 ))}
               </div>
@@ -120,6 +128,20 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ settings, onSave, onClose
                 ))}
               </div>
             </div>
+
+            {/* Application Section */}
+            {canInstall && (
+              <div className="pt-4 border-t border-white/5">
+                <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-4">Application</label>
+                <button 
+                  onClick={onInstall}
+                  className="w-full py-4 bg-blue-600/20 border border-blue-500/30 rounded-2xl font-bold text-blue-400 hover:bg-blue-600/30 transition-all flex items-center justify-center gap-3"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  Installer sur l'appareil
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
@@ -134,7 +156,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ settings, onSave, onClose
             onClick={handleSave}
             className="flex-1 px-4 py-4 bg-white text-black font-black rounded-2xl shadow-xl hover:bg-gray-200 transition-all active:scale-95"
           >
-            Sauvegarder
+            Appliquer
           </button>
         </div>
       </div>

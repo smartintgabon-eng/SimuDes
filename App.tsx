@@ -7,28 +7,45 @@ import SettingsModal from './components/SettingsModal';
 import UpdatesModal from './components/UpdatesModal';
 import TutorialModal from './components/TutorialModal';
 
+const STORAGE_KEY = 'simude_pro_settings_v1';
+
 const App: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
-  const [settings, setSettings] = useState<AppSettings>({
-    themeColor: '#0f172a',
-    dieType: DieType.D6,
+  
+  // Initialisation avec lecture du localStorage
+  const [settings, setSettings] = useState<AppSettings>(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error("Erreur de lecture des paramètres", e);
+      }
+    }
+    return {
+      themeColor: '#0f172a',
+      dieType: DieType.D6,
+    };
   });
+
   const [activeModal, setActiveModal] = useState<'settings' | 'updates' | 'tutorial' | null>(null);
   
   // PWA Installation
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
+  // Sauvegarde automatique à chaque changement de settings
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+  }, [settings]);
+
   useEffect(() => {
     const handler = (e: any) => {
-      // Empêcher Chrome d'afficher le bandeau par défaut trop vite
       e.preventDefault();
-      // Stocker l'événement pour plus tard
       setDeferredPrompt(e);
       console.log('App est installable !');
     };
 
     window.addEventListener('beforeinstallprompt', handler);
-
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
 
