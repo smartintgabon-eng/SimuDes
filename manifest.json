@@ -3,11 +3,11 @@
   "id": "com.simude.pro.v1",
   "name": "SimuDé Pro - L'expérience Ultime",
   "short_name": "SimuDé Pro",
-  "description": "Le simulateur de dé 3D le plus avancé.",
+  "description": "Le simulator de dé 3D le plus avancé.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "icons": [
